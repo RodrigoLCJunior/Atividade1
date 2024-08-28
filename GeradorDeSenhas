@@ -1,0 +1,52 @@
+package org.example;
+
+import java.util.Random;
+
+public class GeradorDeSenhas {
+
+    private String letrasMinusculas = "abcdefghijklmnopqrstuvwxyz";
+    private String letrasMaiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private String numeros = "0123456789";
+    private String simbolos = "!@#$%^&*()-_=+[]{}|;:',.<>?/";
+
+    private final Random random = new Random();
+
+    public String gerarSenha(int comprimento, boolean incluirMinusculas, boolean incluirMaiusculas, boolean incluirNumeros, boolean incluirSimbolos) {
+        if (comprimento < 0) {
+            return "";  // Retorna uma string vazia se o comprimento for negativo
+        }
+
+        String somaCaractere = "";
+
+        if (incluirMinusculas) {
+            somaCaractere += letrasMinusculas;
+        }
+        if (incluirMaiusculas) {
+            somaCaractere += letrasMaiusculas;
+        }
+        if (incluirNumeros) {
+            somaCaractere += numeros;
+        }
+        if (incluirSimbolos) {
+            somaCaractere += simbolos;
+        }
+
+        // Se nenhuma categoria for selecionada, retorna uma string vazia
+        if (somaCaractere.isEmpty()) {
+            return "";  // Retorna uma string vazia se nenhuma categoria for selecionada
+        }
+
+        return gerarSenhaAleatoria(comprimento, somaCaractere);
+    }
+
+    private String gerarSenhaAleatoria(int comprimento, String somaCaractere) {
+        String senha = "";
+
+        for (int i = 0; i < comprimento; i++) {
+            int index = random.nextInt(somaCaractere.length());
+            senha += somaCaractere.charAt(index);
+        }
+
+        return senha;
+    }
+}
