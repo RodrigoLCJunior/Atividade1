@@ -9,7 +9,7 @@ public class GeradorDeSenhas {
     private String numeros = "0123456789";
     private String simbolos = "!@#$%^&*()-_=+[]{}|;:',.<>?/";
 
-    private final Random random = new Random();
+    private Random random = new Random();
 
     public String gerarSenha(int comprimento, boolean incluirMinusculas, boolean incluirMaiusculas, boolean incluirNumeros, boolean incluirSimbolos) {
         if (comprimento < 0) {
