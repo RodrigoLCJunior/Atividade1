@@ -31,7 +31,6 @@ public class GeradorDeSenhas {
             somaCaractere += simbolos;
         }
 
-        // Se nenhuma categoria for selecionada, retorna uma string vazia
         if (somaCaractere.isEmpty()) {
             return "";  // Retorna uma string vazia se nenhuma categoria for selecionada
         }
