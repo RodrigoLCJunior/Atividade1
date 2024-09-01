@@ -13,7 +13,7 @@ public class GeradorDeSenhas {
 
     public String gerarSenha(int comprimento, boolean incluirMinusculas, boolean incluirMaiusculas, boolean incluirNumeros, boolean incluirSimbolos) {
         if (comprimento < 0) {
-            return "";  // Retorna uma string vazia se o comprimento for negativo
+            return ""; 
         }
 
         String somaCaractere = "";
@@ -31,8 +31,8 @@ public class GeradorDeSenhas {
             somaCaractere += simbolos;
         }
 
-        if (somaCaractere.isEmpty()) {
-            return "";  // Retorna uma string vazia se nenhuma categoria for selecionada
+        if (somaCaractere == "") {
+            return ""; 
         }
 
         return gerarSenhaAleatoria(comprimento, somaCaractere);
