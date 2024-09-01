@@ -1,0 +1,10 @@
+package org.example;
+
+public class Main {
+    public static void main(String[] args) {
+        GeradorDeSenhas senha = new GeradorDeSenhas();
+        String novaSenha;
+        novaSenha = senha.gerarSenha(3, true, true, true, true);
+        System.out.println("Senha: "+ novaSenha);
+    }
+}
