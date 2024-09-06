@@ -1,0 +1,90 @@
+package org.example;
+
+public class Personagem {
+
+    private String nome;
+    private int nivel;
+    public  int hp;
+    private int ataque;
+    private int defesa;
+
+    public Personagem(String nome, int nivel, int hp, int ataque, int defesa) {
+        this.nome = nome;
+        this.nivel = nivel;
+        this.hp = hp;
+        this.ataque = ataque;
+        this.defesa = defesa;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public int getAtaque() {
+        return ataque;
+    }
+
+    public void setAtaque(int ataque) {
+        this.ataque = ataque;
+    }
+
+    public int getDefesa() {
+        return defesa;
+    }
+
+    public void setDefesa(int defesa) {
+        this.defesa = defesa;
+    }
+
+    // Métodos
+
+    public void receberDano(int dano) {
+        this.hp -= dano;
+        this.setHp( this.hp);
+        if (this.hp < 0) {
+            this.setHp(0);;
+        }
+    }
+
+    public void atacar(Personagem inimigo) {
+        int dano = this.getAtaque() - inimigo.getDefesa();
+        if (dano > 0) {
+            inimigo.receberDano(dano);
+            System.out.println(this.getNome() + " atacou " + inimigo.getNome() + " causando " + dano + " de dano!");
+        } else {
+            System.out.println(this.getNome() + " atacou " + inimigo.getNome() + " mas o ataque foi ineficaz!");
+        }
+    }
+
+    public void exibirStatus() {
+        System.out.println("Nome: " + this.getNome() +
+                " EXP: " + this.getNivel() +
+                " HP: " + this.getHp() +
+                " ATK: " + this.getAtaque() +
+                " DEF: " + this.getDefesa());
+    }
+
+    public boolean estaVivo() {
+        return this.hp > 0;
+    }
+}
