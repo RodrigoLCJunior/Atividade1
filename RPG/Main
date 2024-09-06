@@ -1,0 +1,40 @@
+package org.example;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+
+        Random random = new Random();
+        List<Personagem> personagens = new ArrayList<>();
+        personagens.add(new Guerreiro("Thorin", 10, 100, 20, 10, 5, 2));
+        personagens.add(new Mago("Gandalf", 10, 80, 15, 5, 50, 25));
+        personagens.add(new Arqueiro("Legolas", 10, 90, 18, 8, 10, 15));
+        boolean winner = false;
+
+        while (winner == false){
+            Personagem atacante = personagens.get(random.nextInt(personagens.size()));
+            Personagem defensor = personagens.get(random.nextInt(personagens.size()));
+
+            while (atacante == defensor) {
+                defensor = personagens.get(random.nextInt(personagens.size()));
+            }
+
+            atacante.atacar(defensor);
+
+            if (defensor.getHp() <= 0) {
+                System.out.println(defensor.getNome() + " foi derrotado!");
+                personagens.remove(defensor);
+            }
+
+            if (personagens.size() == 1) {
+                winner = true;
+                System.out.println(personagens.get(0).getNome() + " é o vencedor!");
+            }
+        }
+    }
+}
