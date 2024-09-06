@@ -1,0 +1,40 @@
+package org.example;
+
+public class Guerreiro extends Personagem {
+
+    private int forcaExtra;
+    private int armadura;
+
+    public Guerreiro(String nome, int nivel, int hp, int ataque, int defesa, int armadura, int forcaExtra) {
+        super(nome, nivel, hp, ataque, defesa);
+        this.forcaExtra = forcaExtra;
+        this.armadura = armadura;
+    }
+
+    public int getArmadura() {
+        return armadura;
+    }
+
+    public void setArmadura(int armadura) {
+        this.armadura = armadura;
+    }
+
+    public int getForcaExtra() {
+        return forcaExtra;
+    }
+
+    public void setForcaExtra(int forcaExtra) {
+        this.forcaExtra = forcaExtra;
+    }
+
+    @Override
+    public void atacar(Personagem inimigo) {
+        int dano = (this.forcaExtra + this.getAtaque()) - inimigo.getDefesa();
+        if (dano > 0) {
+            inimigo.receberDano(dano);
+            System.out.println(this.getNome() + " atacou " + inimigo.getNome() + " causando " + dano + " de dano!");
+        } else {
+            System.out.println(this.getNome() + " atacou " + inimigo.getNome() + " mas o ataque foi ineficaz!");
+        }
+    }
+}
