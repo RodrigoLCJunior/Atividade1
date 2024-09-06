@@ -1,0 +1,40 @@
+package org.example;
+
+import java.util.List;
+
+public class Arqueiro extends  Personagem{
+
+    private int precisao;
+    private int alcance;
+
+    public Arqueiro(String nome, int exp, int hp, int defesa, int atack, int precisao, int alcance) {
+        super(nome, exp, hp, defesa, atack);
+        this.precisao = precisao;
+        this.alcance = alcance;
+
+    }
+
+    public int getPrecisao() {
+        return precisao;
+    }
+
+    public void setPrecisao(int precisao) {
+        this.precisao = precisao;
+    }
+
+    public int getAlcance() {
+        return alcance;
+    }
+
+    public void setAlcance(int alcance) {
+        this.alcance = alcance;
+    }
+
+    public void atirarFlecha(Personagem inimigo) {
+        int danoFlecha = (this.getAtaque() + this.precisao) - inimigo.getDefesa();
+        if (danoFlecha > 0) {
+            inimigo.receberDano(danoFlecha);
+        }
+        System.out.println(this.getNome() + " atirou uma flecha e causou " + danoFlecha + " de dano!");
+    }
+}
