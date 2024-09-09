@@ -1,0 +1,65 @@
+package org.example;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        List<Funcionario> funcionarios = new ArrayList<>();
+
+        System.out.print("Quantos funcionários deseja cadastrar? ");
+        int quantidade = scanner.nextInt();
+
+        System.out.print("Que tipo de Funcionario 1-Funcionario Integral, 2-Funcionario Meio-Periodo, 3-Estagiario? ");
+        int tipoFuncionario = scanner.nextInt();
+
+
+        for (int i = 0; i < quantidade; i++) {
+            System.out.printf("Funcionário %d:%n", i + 1);
+
+            System.out.print("Nome: ");
+            String nome = scanner.next();
+
+            System.out.print("CPF: ");
+            String cpf = scanner.next();
+
+            System.out.print("Salário Base: ");
+            double salarioBase = scanner.nextDouble();
+
+            switch (tipoFuncionario){
+                case 1:
+                    System.out.print("Bonus: ");
+                    double bonus = scanner.nextDouble();
+
+                    funcionarios.add(new FuncionarioTempoIntegral(nome, cpf, salarioBase, bonus));
+                    break;
+
+                case 2:
+                    System.out.print("Horas trabalhadas: ");
+                    int horas = scanner.nextInt();
+
+                    System.out.print("Valor de Horas: ");
+                    int valorHoras = scanner.nextInt();
+
+                    funcionarios.add(new FuncionarioMeioPeriodo(nome, cpf, salarioBase, horas));
+                    break;
+
+                case 3:
+                    System.out.print("Int.Ensino ");
+                    String instituicao = scanner.next();
+
+                    System.out.print("Bolsa Estudo: ");
+                    double bolsa = scanner.nextDouble();
+
+                    funcionarios.add(new Estagiario(nome, cpf, instituicao, bolsa));
+                    break;
+            }
+
+        }
+    }
+}
