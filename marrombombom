@@ -1,0 +1,39 @@
+public class Main {
+    public static void main(String[] args) {
+
+        int numero;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite um numero: ");
+        numero = scanner.nextInt();
+        for (int i = 0; i < numero; i++){
+            System.out.println("O Numero "+ i);
+            for (int i = 0; i < 4; i++){
+                FIZZBUZZ.calculaNumero(numero);
+                FIZZ.calculaNumero(numero);
+                BUZZ.calculaNumero(numero);
+                NUMERO.calculaNumero(numero);
+            }
+        }
+        //Quando for um numero que é Divisivel por 3 e 5 = FizzBuzz
+        // Quando é por 3 é Fizz
+        // Qundo é por 5 é Buzz
+
+        //public static void trazPalavra(Classe m, numero)
+        // m.calculaNumero(numero);
+
+        //Multiplo com metodo void
+        // verificaMulpliplo(numero){
+        //      if (numero % 3 = 0 && numero % 5 = 0){
+        //          SOUT "FIZZBUZZ"
+        //      }
+        // }
+    }
+    public static void trazPalavra(Classe m, numero) {
+        for (int i = 0; i < 4; i++){
+            m.calculaNumero(numero);
+
+        }
+        
+    }    
+}
