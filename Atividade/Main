@@ -1,0 +1,57 @@
+package org.example;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+
+        int numero;
+        int index;
+        boolean retorno = false;
+        Scanner scanner = new Scanner(System.in);
+        List<Frase> frase = new ArrayList<>();
+        frase.add(new FizzBuzz());
+        frase.add(new Fizz());
+        frase.add(new Buzz());
+
+       /* FizzBuzz fizzBuzz = new FizzBuzz();
+        Fizz fizz = new Fizz();
+        Buzz buzz= new Buzz();*/
+
+        System.out.println("Digite um numero: ");
+        numero = scanner.nextInt();
+
+        for (int i = 1; i <= numero; i++) {
+            index = 0;
+            do {
+
+                 retorno = frase.get(index).verificarNumero(i);
+                 index++;
+                 if (index == 3){
+                     System.out.println(i);
+                     retorno = true;
+                 }
+
+            } while (retorno == false);
+
+
+           /* if (i == fizzBuzz.verificarNumero(i)){
+                if(i == fizz.verificarNumero(i)){
+                    if(i == buzz.verificarNumero(i)){
+                        System.out.println(i);
+                    }
+                }
+            }*/
+        }
+    }
+
+    /*public static void testerProximo(Classe c, int numero){
+        if (i == c.verificarNumero(int valor)){
+
+        }
+    }*/
+}
