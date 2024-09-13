@@ -14,9 +14,11 @@ public class Main {
         boolean retorno = false;
         Scanner scanner = new Scanner(System.in);
         List<Frase> frase = new ArrayList<>();
+        frase.add(new PT());
         frase.add(new FizzBuzz());
         frase.add(new Fizz());
         frase.add(new Buzz());
+
 
        /* FizzBuzz fizzBuzz = new FizzBuzz();
         Fizz fizz = new Fizz();
@@ -28,13 +30,13 @@ public class Main {
         for (int i = 1; i <= numero; i++) {
             index = 0;
             do {
+                retorno = frase.get(index).verificarNumero(i);
 
-                 retorno = frase.get(index).verificarNumero(i);
-                 index++;
-                 if (index == 3){
-                     System.out.println(i);
-                     retorno = true;
-                 }
+                index++;
+                if ((index == 4) && (!retorno)) {
+                    System.out.println(i);
+                    retorno = true;
+                }
 
             } while (retorno == false);
 
@@ -54,4 +56,13 @@ public class Main {
 
         }
     }*/
+
+    // junto, sozinho
+    // If (!retorno == frase.get(index).verificarNumero(i)){
+    //      verificarNumero(5)
+    //      verificarNumero(3)
+    // }
+    // verificarNumero(13)
+
+
 }
