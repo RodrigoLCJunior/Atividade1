@@ -1,0 +1,22 @@
+package org.example;
+
+public class Fizz extends Frase {
+
+    public boolean verificarNumero(int numero) {
+        if (numero % 3 == 0) {
+            System.out.println("Fizz");
+            return true;
+        } else {
+            return false;
+        }
+    }
+    /**/
+    /*public int verificarNumero(int numero){
+        if (numero % 3 == 0){
+            System.out.println("Fizz");
+            return 0;
+        } else {
+            return numero;
+        }
+    }*/
+}
