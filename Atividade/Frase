@@ -1,0 +1,6 @@
+package org.example;
+
+public abstract class Frase {
+
+    public abstract boolean verificarNumero(int numero);
+}
