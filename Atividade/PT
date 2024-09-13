@@ -1,0 +1,14 @@
+package org.example;
+
+public class PT extends Frase{
+
+    @Override
+    public boolean verificarNumero(int numero){
+        if (numero % 13 == 0){
+            System.out.println("Faz o L");
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
