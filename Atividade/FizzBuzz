@@ -10,14 +10,4 @@ public class FizzBuzz extends Frase{
             return false;
         }
     }
-
-    /**/
-    /*public int verificarNumero(int numero){
-        if ((numero % 3 == 0) && (numero % 5 == 0)){
-            System.out.println("FizzBuzz");
-            return 0;
-        } else {
-            return numero;
-        }
-    };*/
 }
