@@ -10,13 +10,4 @@ public class Fizz extends Frase {
             return false;
         }
     }
-    /**/
-    /*public int verificarNumero(int numero){
-        if (numero % 3 == 0){
-            System.out.println("Fizz");
-            return 0;
-        } else {
-            return numero;
-        }
-    }*/
 }
