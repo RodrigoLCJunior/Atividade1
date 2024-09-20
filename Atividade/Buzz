@@ -12,13 +12,4 @@ public class Buzz extends Frase{
             return false;
         }
     }
-    /**/
-    /*public int verificarNumero(int numero){
-        if (numero % 5 == 0){
-            System.out.println("Buzz");
-            return 0;
-        } else {
-            return numero;
-        }
-    }*/
 }
