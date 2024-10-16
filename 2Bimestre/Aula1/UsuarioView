@@ -1,0 +1,32 @@
+package org.example.view;
+
+import org.example.model.Usuario;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class UsuarioView {
+    Scanner scanner = new Scanner(System.in);
+
+    //output
+    public void imprimirTodosUsuarios(List<Usuario> usuarios){
+        for (Usuario usuario: usuarios){
+            System.out.println(usuario);
+        };
+    }
+    //input
+    public int getId(){
+        System.out.println("Usuario qual é o seu ID? :");
+        return scanner.nextInt();
+    }
+
+    public String getNome(){
+        System.out.println("Usuario qual é o seu Nome? :");
+        return scanner.next();
+    }
+
+    public String getEmail(){
+        System.out.println("Usuario qual é o seu Email? :");
+        return scanner.next();
+    }
+}
