@@ -1,0 +1,35 @@
+package org.example.controller;
+
+import org.example.model.Usuario;
+import org.example.view.UsuarioView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class UsuarioController {
+    private List<Usuario> usuarios;
+    private UsuarioView usuarioView;
+
+    public UsuarioController(UsuarioView view){
+        this.usuarios = new ArrayList<>();
+        this.usuarioView = view;
+    }
+
+    public void listarUsuarios(List<Usuario> usuarios){
+        usuarioView.imprimirTodosUsuarios(usuarios);
+    }
+
+    public void cadastrarUsuario(){
+        //Validacao de Dados
+        addUsuario(usuarioView.getId(),
+                   usuarioView.getNome(),
+                   usuarioView.getEmail());
+    }
+
+    public void addUsuario(int id, String nome, String email){
+        Usuario usuario = new Usuario(id, nome, email);
+        usuarios.add(usuario);
+        listarUsuarios(usuarios);
+    }
+
+}
